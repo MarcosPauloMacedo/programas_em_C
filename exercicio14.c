@@ -10,17 +10,63 @@ c) A média de peso entre as mulheres d) O maior peso entre os homens.
 */
 
 char sexo[1];
-int quantidade = 0;
+int descobrirsexo;
+int peso, totalmasculino, totalfeminino = 0;
+char masculino[] = "masculino";
+int acimadopeso, pesomasculino, pesofeminino,maiorpeso;
+double mediapeso;
 
-void pegardados(){
-  printf("Qual seu sexo?");
-  scanf("%d", &sexo);
-  quantidade++;
+void lerdados(){
+  printf("digite seu sexo e peso: ");
+  scanf("%s %d", &sexo, &peso);
+}
+
+void validardados(){
+  descobrirsexo = strcmp(sexo,masculino);
+
+  if(descobrirsexo == 0){
+    totalmasculino++;
+    pesomasculino+=peso;
+
+    int negativo = (maiorpeso - peso) <0;
+
+    switch(negativo){
+      case 1: maiorpeso = peso;
+      break;
+    }
+
+    if(peso>=100){
+        acimadopeso++;
+    }
+  }
+
+  else{
+    totalfeminino++;
+    pesofeminino+=peso;
+  }
+}
+
+void descobrirmedia(){
+  mediapeso = (double)pesofeminino / totalfeminino;
+  printf("%.1lf",mediapeso);
 }
 
 int main(){
+  int numerodados = 8;
 
-  while(){
-    pegardados()
+  for(int i = 0;i<numerodados;i++){
+    lerdados();
+    validardados();
   }
+  //a
+  printf("%d: foi a quantidade de mulheres cadastradas. \n",totalfeminino);
+
+  //b
+  printf("%d: foi a quantidade de homens acima de 100kg \n",acimadopeso);
+
+  //c
+  descobrirmedia();
+
+  //d
+  printf("%d foi o maior peso entre os homens \n", maiorpeso);
 }
