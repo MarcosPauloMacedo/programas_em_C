@@ -6,9 +6,15 @@
 // e imprima o valor do desconto e o valor do produto subtraindo o desconto.
 
 int main(){
-  double valorproduto;
-  char desconto[1];
+  double valorproduto,desconto,valordodesconto,valordescontado;
 
-  printf("digite o valor do produto e o desconto que deseja: ");
-  scanf("%lf %s",&valorproduto,desconto);
+  printf("digite o valor do produto e o desconto em % que deseja: (somente numeros) ");
+  scanf("%lf %lf",&valorproduto, &desconto);
+
+  desconto = desconto/100;
+  valordodesconto = valorproduto - (valorproduto * desconto);
+  valordescontado = valorproduto - valordodesconto;
+
+  printf("Seu desconto sera de R$ %.2f \n", valordodesconto);
+  printf("ficando no final o produto no valor de R$ %.2f",valordescontado);
 }
