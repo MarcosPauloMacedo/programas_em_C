@@ -8,5 +8,12 @@
 // o resultado da conversão.
 
 int main(){
+  int celcius;
+  double fahrenheit;
 
+  printf("Qual a temperatura celcius atual: \n");
+  scanf("%i", &celcius);
+
+  fahrenheit = (9 * celcius + 160) /5;
+  printf("%.1f e a mesma temperatura em fahrenheit",fahrenheit);
 }

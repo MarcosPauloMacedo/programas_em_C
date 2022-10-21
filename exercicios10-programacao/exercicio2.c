@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+//programa que imprima o produto dos valores 30 e 27
+
 int main(){
   int n1 = 30;
   int n2 = 27;
